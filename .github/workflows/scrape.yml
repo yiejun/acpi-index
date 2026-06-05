@@ -45,9 +45,14 @@ jobs:
       - name: Run Azure scraper
         run: python -m scrapers.azure_gpu
         continue-on-error: true
-        
+
       - name: Run API token pricing scraper
         run: python -m scrapers.api_pricing
+        continue-on-error: true
+      - name: Run EIA power price scraper
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+        run: python -m scrapers.power_price
         continue-on-error: true
 
 
