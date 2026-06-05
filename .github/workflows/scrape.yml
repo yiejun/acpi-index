@@ -45,6 +45,11 @@ jobs:
       - name: Run Azure scraper
         run: python -m scrapers.azure_gpu
         continue-on-error: true
+        
+      - name: Run API token pricing scraper
+        run: python -m scrapers.api_pricing
+        continue-on-error: true
+
 
       - name: Commit data
         run: |
