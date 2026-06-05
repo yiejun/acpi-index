@@ -1,0 +1,55 @@
+name: Scrape GPU Prices
+
+on:
+  schedule:
+    - cron: '0 0,12 * * *'   # 00:00 and 12:00 UTC (KST 09:00, 21:00)
+  workflow_dispatch:          # manual trigger button
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run AWS scraper
+        run: python -m scrapers.aws_gpu
+        continue-on-error: true
+
+      - name: Run Lambda Labs scraper
+        run: python -m scrapers.lambda_gpu
+        continue-on-error: true
+
+      - name: Run CoreWeave scraper
+        run: python -m scrapers.coreweave_gpu
+        continue-on-error: true
+
+      - name: Run Azure scraper
+        run: python -m scrapers.azure_gpu
+        continue-on-error: true
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/raw/
+          git diff --staged --quiet || git commit -m "chore: scheduled price scrape [skip ci]"
+          git push
