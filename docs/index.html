@@ -27,7 +27,13 @@
   .card-title { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
   .card-desc { color: var(--muted2); font-size: 13px; margin-bottom: 14px; }
   .big { font-size: 36px; font-weight: 600; }
+  
   .small { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .change { font-size: 14px; font-weight: 600; margin-top: 6px; letter-spacing: 0.02em; }
+  .change.up   { color: var(--accent); }
+  .change.down { color: var(--red); }
+  .change.flat { color: var(--muted); }
+
   .section { margin-top: 40px; }
   .section h2 { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
   .section .what { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
@@ -63,24 +69,32 @@
       <div class="card-title">Layer 1 — GPU rental (50%)</div>
       <div class="card-desc">How much it costs to rent the H100 chips that train and run AI models.</div>
       <div class="big" id="m-gpu">—</div>
+      <div class="change flat" id="m-gpu-change">0.00%</div>
+
       <div class="small">$/GPU/hour · avg of 4 clouds</div>
     </div>
     <div class="card">
       <div class="card-title">Layer 2 — API tokens (27%)</div>
       <div class="card-desc">How much you pay providers (OpenAI, Anthropic, Google) per million tokens of text in/out.</div>
       <div class="big" id="m-api">—</div>
+      <div class="change flat" id="m-api-change">0.00%</div>
+
       <div class="small">$/M tokens · 2:1 input:output</div>
     </div>
     <div class="card">
       <div class="card-title">Layer 3 — Power (13%)</div>
       <div class="card-desc">Industrial electricity cost in datacenter-heavy U.S. states (VA, TX, OR, IA, CA).</div>
       <div class="big" id="m-power">—</div>
+      <div class="change flat" id="m-power-change">0.00%</div>
+
       <div class="small">¢/kWh · weighted average</div>
     </div>
     <div class="card">
       <div class="card-title">Layer 4 — Market (10%)</div>
       <div class="card-desc">NVIDIA stock + AI ETFs (CHAT, IRBO). Adds market sentiment volatility.</div>
       <div class="big" id="m-market">—</div>
+      <div class="change flat" id="m-market-change">0.00%</div>
+
       <div class="small">$ · avg close · NVDA + ETFs</div>
     </div>
   </div>
@@ -154,6 +168,34 @@ function corrColor(c) {
   document.getElementById('m-api').textContent = '$' + fmt(latest.layer2_api_composite_per_m_usd);
   document.getElementById('m-power').textContent = fmt(latest.layer3_power_avg_cents_kwh) + '¢';
   document.getElementById('m-market').textContent = '$' + fmt(latest.layer4_market_avg_close_usd);
+
+  // Stock-ticker-style percent change vs previous snapshot
+  const snapshots = data.snapshots || [];
+  const prev = snapshots.length >= 2 ? snapshots[snapshots.length - 2] : null;
+
+  function pctChange(key) {
+    if (!prev || prev[key] == null || latest[key] == null) return 0;
+    const p = prev[key], c = latest[key];
+    if (p === 0) return 0;
+    return ((c - p) / p) * 100;
+  }
+
+  function setChange(id, pct) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let cls = 'change flat', txt = '0.00%';
+    if (Math.abs(pct) >= 0.005) {
+      if (pct > 0) { cls = 'change up'; txt = '▲ ' + pct.toFixed(2) + '%'; }
+      else         { cls = 'change down'; txt = '▼ ' + Math.abs(pct).toFixed(2) + '%'; }
+    }
+    el.className = cls;
+    el.textContent = txt;
+  }
+
+  setChange('m-gpu-change',    pctChange('layer1_gpu_avg_per_gpu_hr_usd'));
+  setChange('m-api-change',    pctChange('layer2_api_composite_per_m_usd'));
+  setChange('m-power-change',  pctChange('layer3_power_avg_cents_kwh'));
+  setChange('m-market-change', pctChange('layer4_market_avg_close_usd'));
 
 
   // ACPI composite chart
