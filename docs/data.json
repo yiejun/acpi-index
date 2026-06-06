@@ -1,0 +1,130 @@
+{
+  "layers": {
+    "gpu": [
+      {
+        "date": "2026-06-05",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-06-05",
+        "price_per_gpu_hour_usd": 4.1268181818,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-06-05",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-06-05",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      }
+    ],
+    "api": [
+      {
+        "date": "2026-06-05",
+        "provider": "anthropic",
+        "avg_input": 3.0,
+        "avg_output": 15.0
+      },
+      {
+        "date": "2026-06-05",
+        "provider": "google",
+        "avg_input": 0.3,
+        "avg_output": 2.5
+      },
+      {
+        "date": "2026-06-05",
+        "provider": "openai",
+        "avg_input": 2.5,
+        "avg_output": 10.0
+      }
+    ],
+    "power": [
+      {
+        "date": "2026-06-05",
+        "state": "CA",
+        "price_cents_kwh": 20.06
+      },
+      {
+        "date": "2026-06-05",
+        "state": "IA",
+        "price_cents_kwh": 6.43
+      },
+      {
+        "date": "2026-06-05",
+        "state": "OR",
+        "price_cents_kwh": 7.96
+      },
+      {
+        "date": "2026-06-05",
+        "state": "TX",
+        "price_cents_kwh": 6.26
+      },
+      {
+        "date": "2026-06-05",
+        "state": "VA",
+        "price_cents_kwh": 10.25
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "date": "2026-06-05",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5473,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192
+    }
+  ],
+  "zscores": [
+    {
+      "date": "2026-06-05",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5473,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "gpu_z": null,
+      "api_z": null,
+      "power_z": null,
+      "acpi_score": null,
+      "n_obs": 1,
+      "window_mode": "insufficient"
+    }
+  ],
+  "meta": {
+    "latest_date": "2026-06-05"
+  },
+  "correlations": [
+    {
+      "date": "2026-06-05",
+      "n_obs": 1,
+      "corr_gpu_api": null,
+      "corr_gpu_power": null,
+      "corr_api_power": null,
+      "divergence_alert": false
+    }
+  ],
+  "pca": [
+    {
+      "date": "2026-06-05",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5473,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "gpu_z": null,
+      "api_z": null,
+      "power_z": null,
+      "acpi_score": null,
+      "n_obs": 1,
+      "window_mode": "insufficient",
+      "pc1": null,
+      "pc1_variance_explained": null
+    }
+  ]
+}

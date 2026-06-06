@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACPI — AI Compute Price Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0a0a0a; --fg: #e5e5e5; --muted: #888; --muted2: #aaa;
+    --card: #141414; --border: #262626;
+    --accent: #4ade80; --warn: #f59e0b; --red: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--fg); padding: 24px; line-height: 1.5; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 28px; font-weight: 600; margin-bottom: 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  .intro { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 16px 0 32px; color: var(--muted2); font-size: 14px; }
+  .intro b { color: var(--fg); }
+  .grid { display: grid; gap: 16px; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 800px) { .grid-3 { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .card-title { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .card-desc { color: var(--muted2); font-size: 13px; margin-bottom: 14px; }
+  .big { font-size: 36px; font-weight: 600; }
+  .small { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .section { margin-top: 40px; }
+  .section h2 { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
+  .section .what { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .chart-box { height: 260px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: var(--border); color: var(--muted); }
+  .badge.active { background: var(--accent); color: #000; }
+  .badge.warn { background: var(--warn); color: #000; }
+  .corr-grid { display: grid; grid-template-columns: 80px repeat(3, 1fr); gap: 4px; font-size: 13px; }
+  .corr-grid .h { color: var(--muted); padding: 8px; text-align: center; font-weight: 500; }
+  .corr-grid .cell { background: var(--border); padding: 14px; text-align: center; border-radius: 6px; font-weight: 500; }
+  .footer { color: var(--muted); font-size: 12px; margin-top: 48px; text-align: center; padding-bottom: 24px; }
+  a { color: var(--accent); text-decoration: none; }
+  .insufficient { color: var(--muted); font-style: italic; padding: 24px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ACPI <span class="badge" id="status">v0.2</span></h1>
+  <div class="sub">AI Compute Price Index</div>
+  <div class="sub" id="last-updated"></div>
+
+<div class="intro">
+    <b>What is this?</b> ACPI tracks how expensive AI compute is — like a stock index, but for renting GPUs and using AI models.
+    It mixes three signals: <b>GPU rental prices</b>, <b>AI model API prices</b>, and <b>data-center electricity</b>.
+    <br><br>
+    <b style="color:var(--accent);">How to read this page:</b>
+    <br>• <b>Top cards</b> = today's raw prices (just averages, in dollars/cents).
+    <br>• <b>ACPI score / correlation / PCA charts</b> = formal statistics from the methodology paper (z-scores, weighted dot product, PCA). These activate after 7 days of data.
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-title">Layer 1 — GPU rental (55%)</div>
+      <div class="card-desc">How much it costs to rent the H100 chips that train and run AI models.</div>
+      <div class="big" id="m-gpu">—</div>
+      <div class="small">$/GPU/hour · avg of 4 clouds</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Layer 2 — API tokens (30%)</div>
+      <div class="card-desc">How much you pay providers (OpenAI, Anthropic, Google) per million tokens of text in/out.</div>
+      <div class="big" id="m-api">—</div>
+      <div class="small">$/M tokens · 2:1 input:output</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Layer 3 — Power (15%)</div>
+      <div class="card-desc">Industrial electricity cost in datacenter-heavy U.S. states (VA, TX, OR, IA, CA).</div>
+      <div class="big" id="m-power">—</div>
+      <div class="small">¢/kWh · weighted average</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>ACPI composite score</h2>
+    <div class="what">A weighted z-score combining all three layers. <b>Positive</b> = AI compute is heating up vs the last 30 days. <b>Negative</b> = cooling down. Activates after 7 days of data.</div>
+    <div class="card chart-box"><canvas id="chart-acpi"></canvas></div>
+  </div>
+
+  <div class="section">
+    <h2>Layer breakdown — today</h2>
+    <div class="what">Where each provider stands right now.</div>
+    <div class="grid grid-3">
+      <div class="card chart-box"><canvas id="chart-gpu"></canvas></div>
+      <div class="card chart-box"><canvas id="chart-api"></canvas></div>
+      <div class="card chart-box"><canvas id="chart-power"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Correlation between layers</h2>
+    <div class="what">Are the three layers moving together? If they diverge (correlation drops below 0.3), something unusual is happening in the AI compute market.</div>
+    <div class="card" id="corr-card">
+      <div class="insufficient" id="corr-empty">Needs at least 7 data points to compute. Building up…</div>
+      <div class="corr-grid" id="corr-grid" style="display: none;"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>PCA — master signal</h2>
+    <div class="what">PCA finds the single number that best summarizes all three layers. The "variance explained" tells you how good that summary is.</div>
+    <div class="card chart-box" id="pca-card">
+      <div class="insufficient" id="pca-empty">Needs at least 7 data points to compute. Building up…</div>
+      <canvas id="chart-pca" style="display: none;"></canvas>
+    </div>
+  </div>
+
+  <div class="footer">
+    Open methodology · <a href="https://github.com/yiejun/acpi-index">GitHub</a>
+  </div>
+</div>
+
+<script>
+Chart.defaults.color = '#888';
+Chart.defaults.borderColor = '#262626';
+
+async function loadData() {
+  const res = await fetch('data.json?t=' + Date.now());
+  return await res.json();
+}
+
+function fmt(n, d=2) { return n == null ? '—' : Number(n).toFixed(d); }
+
+function corrColor(c) {
+  if (c == null || isNaN(c)) return '#262626';
+  const abs = Math.abs(c);
+  if (abs >= 0.6) return '#4ade80';
+  if (abs >= 0.3) return '#f59e0b';
+  return '#ef4444';
+}
+
+(async () => {
+  const data = await loadData();
+
+  if (data.meta && data.meta.latest_date) {
+    document.getElementById('last-updated').textContent = 'Last data point: ' + data.meta.latest_date;
+  }
+
+  const latest = (data.snapshots || []).slice(-1)[0] || {};
+  document.getElementById('m-gpu').textContent = '$' + fmt(latest.layer1_gpu_avg_per_gpu_hr_usd);
+  document.getElementById('m-api').textContent = '$' + fmt(latest.layer2_api_composite_per_m_usd);
+  document.getElementById('m-power').textContent = fmt(latest.layer3_power_avg_cents_kwh) + '¢';
+
+  // ACPI composite chart
+  const z = data.zscores || [];
+  new Chart(document.getElementById('chart-acpi').getContext('2d'), {
+    type: 'line',
+    data: { labels: z.map(r => r.date),
+      datasets: [{ label: 'ACPI score', data: z.map(r => r.acpi_score),
+        borderColor: '#4ade80', backgroundColor: 'rgba(74,222,128,0.1)',
+        tension: 0.3, spanGaps: true }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } } }
+  });
+
+  // Layer breakdown
+  const gpu = data.layers.gpu || [];
+  new Chart(document.getElementById('chart-gpu').getContext('2d'), {
+    type: 'bar',
+    data: { labels: gpu.map(r => r.provider),
+      datasets: [{ data: gpu.map(r => r.price_per_gpu_hour_usd), backgroundColor: '#4ade80' }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, title: { display: true, text: 'GPU ($/GPU/hr)' } } }
+  });
+
+  const api = data.layers.api || [];
+  new Chart(document.getElementById('chart-api').getContext('2d'), {
+    type: 'bar',
+    data: { labels: api.map(r => r.provider),
+      datasets: [
+        { label: 'Input',  data: api.map(r => r.avg_input),  backgroundColor: '#4ade80' },
+        { label: 'Output', data: api.map(r => r.avg_output), backgroundColor: '#f59e0b' }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { title: { display: true, text: 'API ($/M tokens)' } } }
+  });
+
+  const power = data.layers.power || [];
+  new Chart(document.getElementById('chart-power').getContext('2d'), {
+    type: 'bar',
+    data: { labels: power.map(r => r.state),
+      datasets: [{ data: power.map(r => r.price_cents_kwh), backgroundColor: '#f59e0b' }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, title: { display: true, text: 'Power (¢/kWh)' } } }
+  });
+
+  // Correlation matrix
+  const correlations = data.correlations || [];
+  const latestCorr = correlations.slice(-1)[0];
+  if (latestCorr && latestCorr.corr_gpu_api != null) {
+    document.getElementById('corr-empty').style.display = 'none';
+    const grid = document.getElementById('corr-grid');
+    grid.style.display = 'grid';
+    const layers = ['GPU', 'API', 'Power'];
+    const matrix = {
+      'GPU-GPU': 1, 'GPU-API': latestCorr.corr_gpu_api, 'GPU-Power': latestCorr.corr_gpu_power,
+      'API-GPU': latestCorr.corr_gpu_api, 'API-API': 1, 'API-Power': latestCorr.corr_api_power,
+      'Power-GPU': latestCorr.corr_gpu_power, 'Power-API': latestCorr.corr_api_power, 'Power-Power': 1,
+    };
+    let html = '<div class="h"></div>' + layers.map(l => `<div class="h">${l}</div>`).join('');
+    for (const r of layers) {
+      html += `<div class="h">${r}</div>`;
+      for (const c of layers) {
+        const v = matrix[`${r}-${c}`];
+        html += `<div class="cell" style="background:${corrColor(v)};color:#000;">${fmt(v, 2)}</div>`;
+      }
+    }
+    grid.innerHTML = html;
+  }
+
+  // PCA
+  const pcaArr = data.pca || [];
+  const validPca = pcaArr.filter(r => r.pc1 != null);
+  if (validPca.length > 0) {
+    document.getElementById('pca-empty').style.display = 'none';
+    document.getElementById('chart-pca').style.display = 'block';
+    new Chart(document.getElementById('chart-pca').getContext('2d'), {
+      type: 'line',
+      data: { labels: pcaArr.map(r => r.date),
+        datasets: [{ label: 'PC1 (master signal)', data: pcaArr.map(r => r.pc1),
+          borderColor: '#4ade80', backgroundColor: 'rgba(74,222,128,0.1)',
+          tension: 0.3, spanGaps: true }] },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  }
+})();
+</script>
+</body>
+</html>

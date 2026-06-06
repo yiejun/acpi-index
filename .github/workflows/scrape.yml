@@ -79,6 +79,9 @@ jobs:
         run: python -m analysis.pca
         continue-on-error: true
 
+      - name: Export JSON for dashboard
+        run: python -m analysis.export_json
+        continue-on-error: true
 
       - name: Commit data
         run: |
