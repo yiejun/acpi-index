@@ -16,3 +16,8 @@
 - Dashboard live: https://yiejun.github.io/acpi-index/
 - Full automation: 5 scrapers + analysis + JSON export + GitHub Pages
 - Status: data accumulation phase begins
+
+## 2026-06-06 — v0.3 Market layer added
+- Added Layer 4: NVDA + CHAT + IRBO via yfinance
+- Reweighted: GPU 50 / API 27 / Power 13 / Market 10
+- Rationale: cost-based layers scaled 0.91x; market sentiment given residual 10%

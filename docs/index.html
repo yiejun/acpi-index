@@ -169,7 +169,8 @@ function corrColor(c) {
   });
 
   // Layer breakdown
-  const gpu = data.layers.gpu || [];
+  const latestDate = data.meta.latest_date;
+  const gpu = (data.layers.gpu || []).filter(r => r.date === latestDate);
   new Chart(document.getElementById('chart-gpu').getContext('2d'), {
     type: 'bar',
     data: { labels: gpu.map(r => r.provider),
@@ -178,7 +179,7 @@ function corrColor(c) {
       plugins: { legend: { display: false }, title: { display: true, text: 'GPU ($/GPU/hr)' } } }
   });
 
-  const api = data.layers.api || [];
+  const api = (data.layers.api || []).filter(r => r.date === latestDate);
   new Chart(document.getElementById('chart-api').getContext('2d'), {
     type: 'bar',
     data: { labels: api.map(r => r.provider),
@@ -189,7 +190,7 @@ function corrColor(c) {
       plugins: { title: { display: true, text: 'API ($/M tokens)' } } }
   });
 
-  const power = data.layers.power || [];
+  const power = (data.layers.power || []).filter(r => r.date === latestDate);
   new Chart(document.getElementById('chart-power').getContext('2d'), {
     type: 'bar',
     data: { labels: power.map(r => r.state),
