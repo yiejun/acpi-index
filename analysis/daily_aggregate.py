@@ -4,6 +4,7 @@ Daily aggregation: raw → processed
 - Stores one row per (date, layer, metric)
 """
 import pandas as pd
+from analysis.pca_weights import all_weights
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -103,12 +104,31 @@ def compute_acpi_snapshot():
 
     latest_date = max(gpu["date"].max(), api["date"].max(), power["date"].max())
 
-    gpu_avg = gpu[gpu["date"] == gpu["date"].max()]["price_per_gpu_hour_usd"].mean()
-    api_input_avg = api[api["date"] == api["date"].max()]["avg_input"].mean()
-    api_output_avg = api[api["date"] == api["date"].max()]["avg_output"].mean()
-    api_composite = (api_input_avg * 2 + api_output_avg) / 3  # 2:1 input:output ratio
-    power_avg = power[power["date"] == power["date"].max()]["price_cents_kwh"].mean()
-    market_avg = market[market["date"] == market["date"].max()]["close_usd"].mean()
+    weights = all_weights()
+
+    def weighted(df, key_col, value_col, weights_dict):
+        latest = df[df["date"] == df["date"].max()]
+        if not weights_dict:
+            return latest[value_col].mean()
+        total, wsum = 0.0, 0.0
+        for key, w in weights_dict.items():
+            vals = latest[latest[key_col] == key][value_col]
+            if not vals.empty and w > 0:
+                total += w * vals.mean()
+                wsum += w
+        return total / wsum if wsum > 0 else latest[value_col].mean()
+
+    gpu_w, gpu_mode = weights["gpu"]
+    api_w, api_mode = weights["api"]
+    power_w, power_mode = weights["power"]
+    market_w, market_mode = weights["market"]
+
+    gpu_avg = weighted(gpu, "provider", "price_per_gpu_hour_usd", gpu_w)
+    api_input_avg = weighted(api, "provider", "avg_input", api_w)
+    api_output_avg = weighted(api, "provider", "avg_output", api_w)
+    api_composite = (api_input_avg * 2 + api_output_avg) / 3
+    power_avg = weighted(power, "state", "price_cents_kwh", power_w)
+    market_avg = weighted(market, "ticker", "close_usd", market_w)
     timestamp_str = datetime.now(timezone.utc).isoformat()
 
     return {
