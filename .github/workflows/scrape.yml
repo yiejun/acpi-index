@@ -2,7 +2,7 @@ name: Scrape GPU Prices
 
 on:
   schedule:
-    - cron: '0 0,12 * * *'   # 00:00 and 12:00 UTC (KST 09:00, 21:00)
+    - cron: '0 0,3 * * *'   # 00:00 and 12:00 UTC (KST 09:00, 21:00)
   workflow_dispatch:          # manual trigger button
 
 jobs:
