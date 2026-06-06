@@ -20,7 +20,9 @@
   .intro b { color: var(--fg); }
   .grid { display: grid; gap: 16px; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 800px) { .grid-3 { grid-template-columns: 1fr; } }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 800px) { .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) and (min-width: 801px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
   .card-title { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
   .card-desc { color: var(--muted2); font-size: 13px; margin-bottom: 14px; }
@@ -56,27 +58,32 @@
     <br>• <b>ACPI score / correlation / PCA charts</b> = formal statistics from the methodology paper (z-scores, weighted dot product, PCA). These activate after 7 days of data.
   </div>
 
-  <div class="grid grid-3">
+<div class="grid grid-4">
     <div class="card">
-      <div class="card-title">Layer 1 — GPU rental (55%)</div>
+      <div class="card-title">Layer 1 — GPU rental (50%)</div>
       <div class="card-desc">How much it costs to rent the H100 chips that train and run AI models.</div>
       <div class="big" id="m-gpu">—</div>
       <div class="small">$/GPU/hour · avg of 4 clouds</div>
     </div>
     <div class="card">
-      <div class="card-title">Layer 2 — API tokens (30%)</div>
+      <div class="card-title">Layer 2 — API tokens (27%)</div>
       <div class="card-desc">How much you pay providers (OpenAI, Anthropic, Google) per million tokens of text in/out.</div>
       <div class="big" id="m-api">—</div>
       <div class="small">$/M tokens · 2:1 input:output</div>
     </div>
     <div class="card">
-      <div class="card-title">Layer 3 — Power (15%)</div>
+      <div class="card-title">Layer 3 — Power (13%)</div>
       <div class="card-desc">Industrial electricity cost in datacenter-heavy U.S. states (VA, TX, OR, IA, CA).</div>
       <div class="big" id="m-power">—</div>
       <div class="small">¢/kWh · weighted average</div>
     </div>
+    <div class="card">
+      <div class="card-title">Layer 4 — Market (10%)</div>
+      <div class="card-desc">NVIDIA stock + AI ETFs (CHAT, IRBO). Adds market sentiment volatility.</div>
+      <div class="big" id="m-market">—</div>
+      <div class="small">$ · avg close · NVDA + ETFs</div>
+    </div>
   </div>
-
   <div class="section">
     <h2>ACPI composite score</h2>
     <div class="what">A weighted z-score combining all three layers. <b>Positive</b> = AI compute is heating up vs the last 30 days. <b>Negative</b> = cooling down. Activates after 7 days of data.</div>
@@ -146,6 +153,8 @@ function corrColor(c) {
   document.getElementById('m-gpu').textContent = '$' + fmt(latest.layer1_gpu_avg_per_gpu_hr_usd);
   document.getElementById('m-api').textContent = '$' + fmt(latest.layer2_api_composite_per_m_usd);
   document.getElementById('m-power').textContent = fmt(latest.layer3_power_avg_cents_kwh) + '¢';
+  document.getElementById('m-market').textContent = '$' + fmt(latest.layer4_market_avg_close_usd);
+
 
   // ACPI composite chart
   const z = data.zscores || [];

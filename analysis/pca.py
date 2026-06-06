@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 PROCESSED = Path("data/processed")
 ZSCORE_FILE = PROCESSED / "acpi_zscores.parquet"
 
-LAYERS = ["gpu_z", "api_z", "power_z"]
+LAYERS = ["gpu_z", "api_z", "power_z", "market_z"]
 MIN_OBS = 7
 
 
@@ -31,7 +31,7 @@ def main():
         return
 
     X = valid[LAYERS].values
-    pca = PCA(n_components=3)
+    pca = PCA(n_components=4)
     pcs = pca.fit_transform(X)
 
     pc1_series = pd.Series(np.nan, index=df.index)
@@ -42,6 +42,8 @@ def main():
     df["loading_gpu"] = pca.components_[0, 0]
     df["loading_api"] = pca.components_[0, 1]
     df["loading_power"] = pca.components_[0, 2]
+    df["loading_market"] = pca.components_[0, 3]
+
 
     out = PROCESSED / "acpi_pca.parquet"
     df.to_parquet(out, index=False)
@@ -49,7 +51,8 @@ def main():
     print(f"PC1 variance explained: {pca.explained_variance_ratio_[0]:.2%}")
     print(f"Loadings: GPU={pca.components_[0, 0]:.3f}, "
           f"API={pca.components_[0, 1]:.3f}, "
-          f"Power={pca.components_[0, 2]:.3f}")
+          f"Power={pca.components_[0, 2]:.3f}, "
+          f"Market={pca.components_[0, 3]:.3f}")
 
 
 if __name__ == "__main__":

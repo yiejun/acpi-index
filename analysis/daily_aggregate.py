@@ -62,6 +62,18 @@ def aggregate_api():
     ).reset_index()
     return daily
 
+def aggregate_market():
+    """Layer 4: NVDA + AI ETFs daily prices."""
+    df = load_all("market_signal")
+    if df.empty:
+        return pd.DataFrame()
+    df["date"] = pd.to_datetime(df["timestamp"]).dt.date
+    # Daily avg per ticker (in case of multiple snapshots per day)
+    daily = df.groupby(["date", "ticker"]).agg(
+        close_usd=("close_usd", "mean"),
+        pct_change_1d=("pct_change_1d", "mean"),
+    ).reset_index()
+    return daily
 
 def aggregate_power():
     """Layer 3: avg industrial electricity price across DC states."""
@@ -83,8 +95,9 @@ def compute_acpi_snapshot():
     gpu = aggregate_gpu()
     api = aggregate_api()
     power = aggregate_power()
+    market = aggregate_market()
 
-    if gpu.empty or api.empty or power.empty:
+    if gpu.empty or api.empty or power.empty or market.empty:
         print("⚠️ Not all layers have data yet")
         return None
 
@@ -95,6 +108,7 @@ def compute_acpi_snapshot():
     api_output_avg = api[api["date"] == api["date"].max()]["avg_output"].mean()
     api_composite = (api_input_avg * 2 + api_output_avg) / 3  # 2:1 input:output ratio
     power_avg = power[power["date"] == power["date"].max()]["price_cents_kwh"].mean()
+    market_avg = market[market["date"] == market["date"].max()]["close_usd"].mean()
 
     return {
         "date": str(latest_date),
@@ -103,6 +117,8 @@ def compute_acpi_snapshot():
         "layer2_api_output_avg_per_m_usd": round(api_output_avg, 4),
         "layer2_api_composite_per_m_usd": round(api_composite, 4),
         "layer3_power_avg_cents_kwh": round(power_avg, 4),
+        "layer4_market_avg_close_usd": round(market_avg, 4),
+
     }
 
 
@@ -112,7 +128,8 @@ def main():
     # Save per-layer aggregates
     for name, df in [("gpu", aggregate_gpu()),
                      ("api", aggregate_api()),
-                     ("power", aggregate_power())]:
+                     ("power", aggregate_power()),
+                     ("market", aggregate_market())]:
         if df.empty:
             continue
         out = PROCESSED / f"{name}_daily.parquet"

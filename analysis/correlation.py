@@ -9,7 +9,7 @@ from pathlib import Path
 PROCESSED = Path("data/processed")
 ZSCORE_FILE = PROCESSED / "acpi_zscores.parquet"
 
-LAYERS = ["gpu_z", "api_z", "power_z"]
+LAYERS = ["gpu_z", "api_z", "power_z", "market_z"]
 DIVERGENCE_THRESHOLD = 0.3
 ROLL_WINDOW = 30
 MIN_OBS = 7
@@ -29,30 +29,35 @@ def main():
         if n < MIN_OBS:
             rows.append({"date": df.loc[i, "date"], "n_obs": n,
                          "corr_gpu_api": np.nan, "corr_gpu_power": np.nan,
-                         "corr_api_power": np.nan, "divergence_alert": False})
+                         "corr_gpu_market": np.nan, "corr_api_power": np.nan,
+                         "corr_api_market": np.nan, "corr_power_market": np.nan,
+                         "divergence_alert": False})
             continue
 
         window = df.iloc[max(0, i - ROLL_WINDOW + 1) : i + 1][LAYERS].dropna()
         if len(window) < MIN_OBS:
             rows.append({"date": df.loc[i, "date"], "n_obs": n,
                          "corr_gpu_api": np.nan, "corr_gpu_power": np.nan,
-                         "corr_api_power": np.nan, "divergence_alert": False})
+                         "corr_gpu_market": np.nan, "corr_api_power": np.nan,
+                         "corr_api_market": np.nan, "corr_power_market": np.nan,
+                         "divergence_alert": False})
             continue
 
         corr = window.corr()
-        c_ga = corr.loc["gpu_z", "api_z"]
-        c_gp = corr.loc["gpu_z", "power_z"]
-        c_ap = corr.loc["api_z", "power_z"]
-
-        # Divergence alert: any off-diagonal pair < threshold
-        alert = any(abs(c) < DIVERGENCE_THRESHOLD for c in [c_ga, c_gp, c_ap])
+        pairs = {
+            "corr_gpu_api": corr.loc["gpu_z", "api_z"],
+            "corr_gpu_power": corr.loc["gpu_z", "power_z"],
+            "corr_gpu_market": corr.loc["gpu_z", "market_z"],
+            "corr_api_power": corr.loc["api_z", "power_z"],
+            "corr_api_market": corr.loc["api_z", "market_z"],
+            "corr_power_market": corr.loc["power_z", "market_z"],
+        }
+        alert = any(abs(v) < DIVERGENCE_THRESHOLD for v in pairs.values())
 
         rows.append({
             "date": df.loc[i, "date"],
             "n_obs": n,
-            "corr_gpu_api": round(c_ga, 4),
-            "corr_gpu_power": round(c_gp, 4),
-            "corr_api_power": round(c_ap, 4),
+            **{k: round(v, 4) for k, v in pairs.items()},
             "divergence_alert": alert,
         })
 

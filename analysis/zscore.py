@@ -12,7 +12,7 @@ from pathlib import Path
 PROCESSED = Path("data/processed")
 SNAP_FILE = PROCESSED / "acpi_snapshots.parquet"
 
-WEIGHTS = {"gpu": 0.55, "api": 0.30, "power": 0.15}
+WEIGHTS = {"gpu": 0.50, "api": 0.27, "power": 0.13, "market": 0.10}
 ROLL_WINDOW = 30
 MIN_OBS = 7
 
@@ -20,7 +20,9 @@ LAYER_COLS = {
     "gpu": "layer1_gpu_avg_per_gpu_hr_usd",
     "api": "layer2_api_composite_per_m_usd",
     "power": "layer3_power_avg_cents_kwh",
+    "market": "layer4_market_avg_close_usd",
 }
+
 
 
 def adaptive_zscore(series):
@@ -60,6 +62,7 @@ def main():
         WEIGHTS["gpu"] * df["gpu_z"]
         + WEIGHTS["api"] * df["api_z"]
         + WEIGHTS["power"] * df["power_z"]
+        + WEIGHTS["market"] * df["market_z"]
     )
 
     df["n_obs"] = range(1, len(df) + 1)
@@ -75,7 +78,7 @@ def main():
     print(f"✓ Saved to {out}\n")
 
     # Display
-    cols = ["date", "n_obs", "window_mode", "gpu_z", "api_z", "power_z", "acpi_score"]
+    cols = ["date", "n_obs", "window_mode", "gpu_z", "api_z", "power_z", "market_z", "acpi_score"]
     print(df[cols].to_string(index=False))
 
 

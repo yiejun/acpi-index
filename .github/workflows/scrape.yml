@@ -51,6 +51,11 @@ jobs:
           VAST_API_KEY: ${{ secrets.VAST_API_KEY }}
         run: python -m scrapers.vast_gpu
         continue-on-error: true
+        
+      - name: Run market signal scraper
+        run: python -m scrapers.market_signal
+        continue-on-error: true
+
 
 
       - name: Run API token pricing scraper

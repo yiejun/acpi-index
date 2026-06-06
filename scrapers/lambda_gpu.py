@@ -102,7 +102,7 @@ def main():
             "pricing_type": "on-demand",
             "context": m["context"],
         })
-
+    
     df = pd.DataFrame(rows)
     print("\n=== Results ===")
     print(df.to_string())
