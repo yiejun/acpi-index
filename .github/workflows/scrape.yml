@@ -54,6 +54,9 @@ jobs:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
         run: python -m scrapers.power_price
         continue-on-error: true
+      - name: Run daily aggregation
+        run: python -m analysis.daily_aggregate
+        continue-on-error: true
 
 
       - name: Commit data
