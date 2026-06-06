@@ -49,13 +49,19 @@ jobs:
       - name: Run API token pricing scraper
         run: python -m scrapers.api_pricing
         continue-on-error: true
+        
       - name: Run EIA power price scraper
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
         run: python -m scrapers.power_price
         continue-on-error: true
+
       - name: Run daily aggregation
         run: python -m analysis.daily_aggregate
+        continue-on-error: true
+
+      - name: Compute z-scores
+        run: python -m analysis.zscore
         continue-on-error: true
 
 
