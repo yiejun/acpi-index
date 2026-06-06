@@ -26,10 +26,11 @@
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
   .card-title { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
   .card-desc { color: var(--muted2); font-size: 13px; margin-bottom: 14px; }
-  .big { font-size: 36px; font-weight: 600; }
+  .big { font-size: 36px; font-weight: 600; display: inline-block; vertical-align: bottom; }
   
   .small { color: var(--muted); font-size: 12px; margin-top: 4px; }
-  .change { font-size: 14px; font-weight: 600; margin-top: 6px; letter-spacing: 0.02em; }
+  .change { font-size: 14px; font-weight: 600; margin-top: 0; margin-left: 10px; letter-spacing: 0.02em;
+            display: inline-block; vertical-align: bottom; padding-bottom: 8px; }
   .change.up   { color: var(--accent); }
   .change.down { color: var(--red); }
   .change.flat { color: var(--muted); }
