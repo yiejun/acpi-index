@@ -23,14 +23,14 @@ def main():
 
     snap = PROCESSED / "acpi_snapshots.parquet"
     if snap.exists():
-        df = pd.read_parquet(snap).sort_values("date")
+        df = pd.read_parquet(snap).sort_values("timestamp")
         payload["snapshots"] = df_to_records(df)
         if not df.empty:
             payload["meta"]["latest_date"] = str(df["date"].max())
 
     z = PROCESSED / "acpi_zscores.parquet"
     if z.exists():
-        df = pd.read_parquet(z).sort_values("date")
+        df = pd.read_parquet(z).sort_values("timestamp")
         payload["zscores"] = df_to_records(df)
 
     for name in ["gpu", "api", "power"]:

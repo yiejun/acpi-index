@@ -50,7 +50,7 @@ def main():
         print(f"No snapshots found at {SNAP_FILE}")
         return
 
-    df = pd.read_parquet(SNAP_FILE).sort_values("date").reset_index(drop=True)
+    df = pd.read_parquet(SNAP_FILE).sort_values("timestamp").reset_index(drop=True)
     print(f"Loaded {len(df)} snapshots\n")
 
     # Compute z-scores per layer

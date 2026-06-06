@@ -109,8 +109,10 @@ def compute_acpi_snapshot():
     api_composite = (api_input_avg * 2 + api_output_avg) / 3  # 2:1 input:output ratio
     power_avg = power[power["date"] == power["date"].max()]["price_cents_kwh"].mean()
     market_avg = market[market["date"] == market["date"].max()]["close_usd"].mean()
+    timestamp_str = datetime.now(timezone.utc).isoformat()
 
     return {
+        "timestamp": timestamp_str,
         "date": str(latest_date),
         "layer1_gpu_avg_per_gpu_hr_usd": round(gpu_avg, 4),
         "layer2_api_input_avg_per_m_usd": round(api_input_avg, 4),
@@ -143,9 +145,10 @@ def main():
         out = PROCESSED / "acpi_snapshots.parquet"
         if out.exists():
             existing = pd.read_parquet(out)
-            snap_df = pd.concat([existing, snap_df], ignore_index=True).drop_duplicates(
-                subset=["date"], keep="last"
-            )
+        snap_df = pd.concat([existing, snap_df], ignore_index=True).drop_duplicates(
+            subset=["timestamp"], keep="last"
+        )        
+        
         snap_df.to_parquet(out, index=False)
         print(f"\n=== ACPI Snapshot ({snap['date']}) ===")
         for k, v in snap.items():
