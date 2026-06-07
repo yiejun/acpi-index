@@ -7,3 +7,4 @@ scikit-learn
 python-dotenv
 boto3
 ijson
+yfinance
