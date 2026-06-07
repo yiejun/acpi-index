@@ -8,7 +8,7 @@ from sklearn.decomposition import PCA
 from pathlib import Path
 
 RAW = Path("data/raw")
-MIN_OBS = 7
+MIN_OBS = 1000
 
 
 def _pca_weights(pivot):

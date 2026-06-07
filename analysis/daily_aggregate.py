@@ -165,9 +165,9 @@ def main():
         out = PROCESSED / "acpi_snapshots.parquet"
         if out.exists():
             existing = pd.read_parquet(out)
-        snap_df = pd.concat([existing, snap_df], ignore_index=True).drop_duplicates(
-            subset=["timestamp"], keep="last"
-        )        
+            snap_df = pd.concat([existing, snap_df], ignore_index=True).drop_duplicates(
+                subset=["timestamp"], keep="last"
+            )        
         
         snap_df.to_parquet(out, index=False)
         print(f"\n=== ACPI Snapshot ({snap['date']}) ===")
