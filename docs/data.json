@@ -339,6 +339,16 @@
       "layer2_api_composite_per_m_usd": 4.3444,
       "layer3_power_avg_cents_kwh": 10.192,
       "layer4_market_avg_close_usd": 122.1267
+    },
+    {
+      "timestamp": "2026-06-08T08:49:27.788733+00:00",
+      "date": "2026-06-08",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5081,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "layer4_market_avg_close_usd": 122.1267
     }
   ],
   "zscores": [
@@ -477,6 +487,23 @@
       "acpi_score": -0.3217335854,
       "n_obs": 8,
       "window_mode": "expanding"
+    },
+    {
+      "timestamp": "2026-06-08T08:49:27.788733+00:00",
+      "date": "2026-06-08",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5081,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "layer4_market_avg_close_usd": 122.1267,
+      "gpu_z": -0.9428090416,
+      "api_z": 0.0,
+      "power_z": -1.7638342074,
+      "market_z": 0.0,
+      "acpi_score": -0.7007029677,
+      "n_obs": 9,
+      "window_mode": "expanding"
     }
   ],
   "meta": {
@@ -563,6 +590,17 @@
     {
       "date": "2026-06-08",
       "n_obs": 8,
+      "corr_gpu_api": null,
+      "corr_gpu_power": null,
+      "corr_gpu_market": null,
+      "corr_api_power": null,
+      "corr_api_market": null,
+      "corr_power_market": null,
+      "divergence_alert": false
+    },
+    {
+      "date": "2026-06-08",
+      "n_obs": 9,
       "corr_gpu_api": null,
       "corr_gpu_power": null,
       "corr_gpu_market": null,
@@ -721,6 +759,25 @@
       "market_z": 0.0,
       "acpi_score": -0.3217335854,
       "n_obs": 8,
+      "window_mode": "expanding",
+      "pc1": null,
+      "pc1_variance_explained": null
+    },
+    {
+      "timestamp": "2026-06-08T08:49:27.788733+00:00",
+      "date": "2026-06-08",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5081,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "layer4_market_avg_close_usd": 122.1267,
+      "gpu_z": -0.9428090416,
+      "api_z": 0.0,
+      "power_z": -1.7638342074,
+      "market_z": 0.0,
+      "acpi_score": -0.7007029677,
+      "n_obs": 9,
       "window_mode": "expanding",
       "pc1": null,
       "pc1_variance_explained": null
