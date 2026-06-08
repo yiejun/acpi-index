@@ -60,6 +60,26 @@
         "date": "2026-06-07",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
+      },
+      {
+        "date": "2026-06-08",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-06-08",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-06-08",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-06-08",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       }
     ],
     "api": [
@@ -116,6 +136,24 @@
         "provider": "openai",
         "avg_input": 2.5,
         "avg_output": 10.0
+      },
+      {
+        "date": "2026-06-08",
+        "provider": "anthropic",
+        "avg_input": 3.0,
+        "avg_output": 15.0
+      },
+      {
+        "date": "2026-06-08",
+        "provider": "google",
+        "avg_input": 0.3,
+        "avg_output": 2.5
+      },
+      {
+        "date": "2026-06-08",
+        "provider": "openai",
+        "avg_input": 2.5,
+        "avg_output": 10.0
       }
     ],
     "power": [
@@ -146,23 +184,13 @@
       },
       {
         "date": "2026-06-06",
-        "state": "CA",
-        "price_cents_kwh": 20.06
-      },
-      {
-        "date": "2026-06-06",
-        "state": "IA",
-        "price_cents_kwh": 6.43
+        "state": "TX",
+        "price_cents_kwh": 6.26
       },
       {
         "date": "2026-06-06",
         "state": "OR",
         "price_cents_kwh": 7.96
-      },
-      {
-        "date": "2026-06-06",
-        "state": "TX",
-        "price_cents_kwh": 6.26
       },
       {
         "date": "2026-06-06",
@@ -170,6 +198,16 @@
         "price_cents_kwh": 10.25
       },
       {
+        "date": "2026-06-06",
+        "state": "CA",
+        "price_cents_kwh": 20.06
+      },
+      {
+        "date": "2026-06-06",
+        "state": "IA",
+        "price_cents_kwh": 6.43
+      },
+      {
         "date": "2026-06-07",
         "state": "CA",
         "price_cents_kwh": 20.06
@@ -191,6 +229,31 @@
       },
       {
         "date": "2026-06-07",
+        "state": "VA",
+        "price_cents_kwh": 10.25
+      },
+      {
+        "date": "2026-06-08",
+        "state": "TX",
+        "price_cents_kwh": 6.26
+      },
+      {
+        "date": "2026-06-08",
+        "state": "CA",
+        "price_cents_kwh": 20.06
+      },
+      {
+        "date": "2026-06-08",
+        "state": "IA",
+        "price_cents_kwh": 6.43
+      },
+      {
+        "date": "2026-06-08",
+        "state": "OR",
+        "price_cents_kwh": 7.96
+      },
+      {
+        "date": "2026-06-08",
         "state": "VA",
         "price_cents_kwh": 10.25
       }
