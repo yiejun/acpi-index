@@ -635,6 +635,16 @@
       "layer2_api_composite_per_m_usd": 4.3444,
       "layer3_power_avg_cents_kwh": 10.192,
       "layer4_market_avg_close_usd": 122.6981
+    },
+    {
+      "timestamp": "2026-06-10T20:23:19.587541+00:00",
+      "date": "2026-06-10",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5081,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "layer4_market_avg_close_usd": 121.8443
     }
   ],
   "zscores": [
@@ -1062,6 +1072,23 @@
       "acpi_score": -0.6267281592,
       "n_obs": 25,
       "window_mode": "expanding"
+    },
+    {
+      "timestamp": "2026-06-10T20:23:19.587541+00:00",
+      "date": "2026-06-10",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5081,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "layer4_market_avg_close_usd": 121.8443,
+      "gpu_z": -0.9805806757,
+      "api_z": -0.9805806757,
+      "power_z": -0.5951898959,
+      "market_z": -1.2252605859,
+      "acpi_score": -0.9549478653,
+      "n_obs": 26,
+      "window_mode": "expanding"
     }
   ],
   "meta": {
@@ -1342,6 +1369,17 @@
       "corr_api_market": 0.2098,
       "corr_power_market": 0.0537,
       "divergence_alert": true
+    },
+    {
+      "date": "2026-06-10",
+      "n_obs": 26,
+      "corr_gpu_api": 0.7262,
+      "corr_gpu_power": -0.2689,
+      "corr_gpu_market": 0.3511,
+      "corr_api_power": -0.3912,
+      "corr_api_market": 0.3109,
+      "corr_power_market": -0.0423,
+      "divergence_alert": true
     }
   ],
   "pca": [
@@ -1362,11 +1400,11 @@
       "n_obs": 1,
       "window_mode": "insufficient",
       "pc1": null,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-07T06:18:49.405218+00:00",
@@ -1385,11 +1423,11 @@
       "n_obs": 2,
       "window_mode": "insufficient",
       "pc1": null,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-07T08:49:20.902113+00:00",
@@ -1408,11 +1446,11 @@
       "n_obs": 3,
       "window_mode": "insufficient",
       "pc1": null,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-07T11:44:43.671765+00:00",
@@ -1431,11 +1469,11 @@
       "n_obs": 4,
       "window_mode": "insufficient",
       "pc1": null,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-07T13:29:51.816508+00:00",
@@ -1454,11 +1492,11 @@
       "n_obs": 5,
       "window_mode": "insufficient",
       "pc1": null,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-07T15:12:36.676746+00:00",
@@ -1477,11 +1515,11 @@
       "n_obs": 6,
       "window_mode": "insufficient",
       "pc1": null,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-07T15:20:22.196357+00:00",
@@ -1499,12 +1537,12 @@
       "acpi_score": -0.2129386229,
       "n_obs": 7,
       "window_mode": "expanding",
-      "pc1": -2.0759624312,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -1.9092792794,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-08T07:53:45.270780+00:00",
@@ -1522,12 +1560,12 @@
       "acpi_score": -0.3217335854,
       "n_obs": 8,
       "window_mode": "expanding",
-      "pc1": -1.1809294852,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.957627326,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-08T08:49:27.788733+00:00",
@@ -1545,12 +1583,12 @@
       "acpi_score": -0.7007029677,
       "n_obs": 9,
       "window_mode": "expanding",
-      "pc1": -1.3341193033,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -1.1522280865,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-08T14:03:19.439532+00:00",
@@ -1568,12 +1606,12 @@
       "acpi_score": -0.3781245573,
       "n_obs": 10,
       "window_mode": "expanding",
-      "pc1": 1.4403190835,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.5834811179,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-08T18:22:39.348563+00:00",
@@ -1591,12 +1629,12 @@
       "acpi_score": 0.1106746941,
       "n_obs": 11,
       "window_mode": "expanding",
-      "pc1": 1.5016620496,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.6495366776,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-08T21:47:39.680346+00:00",
@@ -1614,12 +1652,12 @@
       "acpi_score": 0.0905272265,
       "n_obs": 12,
       "window_mode": "expanding",
-      "pc1": 1.1431227329,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.2889123484,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-08T23:10:26.452887+00:00",
@@ -1637,12 +1675,12 @@
       "acpi_score": 0.0777556315,
       "n_obs": 13,
       "window_mode": "expanding",
-      "pc1": 0.898603656,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.0426582552,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T02:36:59.782463+00:00",
@@ -1660,12 +1698,12 @@
       "acpi_score": 0.1458660935,
       "n_obs": 14,
       "window_mode": "expanding",
-      "pc1": 1.4688779246,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.6045934842,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T07:24:54.812807+00:00",
@@ -1683,12 +1721,12 @@
       "acpi_score": 0.3921174132,
       "n_obs": 15,
       "window_mode": "expanding",
-      "pc1": 1.3957358811,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.5648855196,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T07:42:51.142423+00:00",
@@ -1706,12 +1744,12 @@
       "acpi_score": 0.1035248279,
       "n_obs": 16,
       "window_mode": "expanding",
-      "pc1": 0.9177035119,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 1.0538880328,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T10:56:58.047838+00:00",
@@ -1729,12 +1767,12 @@
       "acpi_score": 0.0839591378,
       "n_obs": 17,
       "window_mode": "expanding",
-      "pc1": 0.6736929319,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 0.8103503228,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T14:37:39.417769+00:00",
@@ -1752,12 +1790,12 @@
       "acpi_score": -0.6880840689,
       "n_obs": 18,
       "window_mode": "expanding",
-      "pc1": 0.0893711671,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": 0.1809309963,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T17:56:53.330500+00:00",
@@ -1775,12 +1813,12 @@
       "acpi_score": -0.7239552078,
       "n_obs": 19,
       "window_mode": "expanding",
-      "pc1": -0.2896565036,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.196025402,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T20:04:58.575335+00:00",
@@ -1798,12 +1836,12 @@
       "acpi_score": -0.7312784183,
       "n_obs": 20,
       "window_mode": "expanding",
-      "pc1": -0.3868843447,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.2936076969,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-09T23:15:53.488962+00:00",
@@ -1821,12 +1859,12 @@
       "acpi_score": -0.7368745133,
       "n_obs": 21,
       "window_mode": "expanding",
-      "pc1": -0.4644040512,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.3715298935,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-10T02:51:10.636545+00:00",
@@ -1844,12 +1882,12 @@
       "acpi_score": -0.754318378,
       "n_obs": 22,
       "window_mode": "expanding",
-      "pc1": -0.6550354716,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.5614143821,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-10T08:03:28.544564+00:00",
@@ -1867,12 +1905,12 @@
       "acpi_score": -0.7555300018,
       "n_obs": 23,
       "window_mode": "expanding",
-      "pc1": -0.685486575,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.5924958701,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-10T12:51:54.413434+00:00",
@@ -1890,12 +1928,12 @@
       "acpi_score": -0.0190936792,
       "n_obs": 24,
       "window_mode": "expanding",
-      "pc1": -0.5623582777,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -0.4220317117,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     },
     {
       "timestamp": "2026-06-10T16:56:18.162970+00:00",
@@ -1913,12 +1951,35 @@
       "acpi_score": -0.6267281592,
       "n_obs": 25,
       "window_mode": "expanding",
-      "pc1": -1.8942524953,
-      "pc1_variance_explained": 0.6557287361,
-      "loading_gpu": 0.1660486524,
-      "loading_api": 0.1498232749,
-      "loading_power": 0.0047287845,
-      "loading_market": 0.9746581298
+      "pc1": -1.7559829856,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
+    },
+    {
+      "timestamp": "2026-06-10T20:23:19.587541+00:00",
+      "date": "2026-06-10",
+      "layer1_gpu_avg_per_gpu_hr_usd": 7.5081,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.192,
+      "layer4_market_avg_close_usd": 121.8443,
+      "gpu_z": -0.9805806757,
+      "api_z": -0.9805806757,
+      "power_z": -0.5951898959,
+      "market_z": -1.2252605859,
+      "acpi_score": -0.9549478653,
+      "n_obs": 26,
+      "window_mode": "expanding",
+      "pc1": -2.5670141208,
+      "pc1_variance_explained": 0.7059453948,
+      "loading_gpu": 0.1783720955,
+      "loading_api": 0.1849563165,
+      "loading_power": -0.0371708395,
+      "loading_market": 0.9657084887
     }
   ]
 }
