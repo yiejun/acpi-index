@@ -76,6 +76,10 @@ jobs:
       - name: Compute z-scores
         run: python -m analysis.zscore
         continue-on-error: true
+        
+      - name: Compute level index
+        run: python -m analysis.level_index
+        continue-on-error: true
 
       - name: Compute correlations
         run: python -m analysis.correlation
