@@ -49,6 +49,16 @@ def main():
         df = pd.read_parquet(pca).sort_values("date")
         payload["pca"] = df_to_records(df)
 
+    level = PROCESSED / "acpi_level.parquet"
+    if level.exists():
+        df = pd.read_parquet(level).sort_values("date")
+        payload["level"] = df_to_records(df)
+        if not df.empty:
+            last = df.iloc[-1]
+            payload["meta"]["acpi_level"] = float(last["acpi_level"])
+            payload["meta"]["acpi_level_chg_1d"] = float(last["chg_1d_pct"])
+
+
     out = DOCS / "data.json"
     out.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"✓ Exported to {out}")

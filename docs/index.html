@@ -216,8 +216,22 @@
   <div class="section">
     <div class="section-head">
       <div>
-        <h2>ACPI composite score</h2>
-        <div class="desc">A weighted z-score combining all four layers. Positive = heating up. Negative = cooling down.</div>
+        <h2>ACPI Level Index</h2>
+        <div class="desc">Chained Törnqvist price index, base = 100 at launch. 112 means AI compute costs 12% more than at base date.</div>
+      </div>
+      <span class="badge" id="level-badge">—</span>
+    </div>
+    <div class="chart-card tall"><canvas id="chart-level"></canvas></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <!-- <h2>ACPI composite score</h2>
+        <div class="desc">A weighted z-score combining all four layers. Positive = heating up. Negative = cooling down.</div> -->
+        <h2>ACPI Momentum (z-score)</h2>
+        <div class="desc">Weighted z-score of all four layers — the rate-of-change signal. Positive = heating up. Negative = cooling down.</div>
+
       </div>
       <span class="badge">activates at 7 obs</span>
     </div>

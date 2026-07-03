@@ -6523,7 +6523,9 @@
     }
   ],
   "meta": {
-    "latest_date": "2026-07-03"
+    "latest_date": "2026-07-03",
+    "acpi_level": 98.9994,
+    "acpi_level_chg_1d": -0.09
   },
   "correlations": [
     {
@@ -13055,6 +13057,278 @@
       "loading_api": 0.0715784745,
       "loading_power": -0.0931289833,
       "loading_market": 0.991541604
+    }
+  ],
+  "level": [
+    {
+      "date": "2026-06-07",
+      "acpi_level": 100.0,
+      "chg_1d_pct": null,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": null,
+      "contrib_api_pct": null,
+      "contrib_power_pct": null,
+      "contrib_market_pct": null
+    },
+    {
+      "date": "2026-06-08",
+      "acpi_level": 99.5261,
+      "chg_1d_pct": -0.4739,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": -0.5692,
+      "contrib_market_pct": 0.0942
+    },
+    {
+      "date": "2026-06-09",
+      "acpi_level": 99.6303,
+      "chg_1d_pct": 0.1047,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.1046
+    },
+    {
+      "date": "2026-06-10",
+      "acpi_level": 99.3736,
+      "chg_1d_pct": -0.2576,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.258
+    },
+    {
+      "date": "2026-06-11",
+      "acpi_level": 99.3393,
+      "chg_1d_pct": -0.0345,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.0345
+    },
+    {
+      "date": "2026-06-12",
+      "acpi_level": 99.5217,
+      "chg_1d_pct": 0.1836,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.1835
+    },
+    {
+      "date": "2026-06-13",
+      "acpi_level": 99.5708,
+      "chg_1d_pct": 0.0493,
+      "chg_7d_pct": null,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0493
+    },
+    {
+      "date": "2026-06-14",
+      "acpi_level": 99.5731,
+      "chg_1d_pct": 0.0023,
+      "chg_7d_pct": -0.4269,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0023
+    },
+    {
+      "date": "2026-06-15",
+      "acpi_level": 99.767,
+      "chg_1d_pct": 0.1947,
+      "chg_7d_pct": 0.2421,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.1945
+    },
+    {
+      "date": "2026-06-16",
+      "acpi_level": 99.767,
+      "chg_1d_pct": 0.0,
+      "chg_7d_pct": 0.1372,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
+    },
+    {
+      "date": "2026-06-17",
+      "acpi_level": 99.767,
+      "chg_1d_pct": 0.0,
+      "chg_7d_pct": 0.3959,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
+    },
+    {
+      "date": "2026-06-18",
+      "acpi_level": 99.767,
+      "chg_1d_pct": 0.0,
+      "chg_7d_pct": 0.4305,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
+    },
+    {
+      "date": "2026-06-19",
+      "acpi_level": 99.767,
+      "chg_1d_pct": 0.0,
+      "chg_7d_pct": 0.2465,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
+    },
+    {
+      "date": "2026-06-20",
+      "acpi_level": 99.767,
+      "chg_1d_pct": 0.0,
+      "chg_7d_pct": 0.197,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
+    },
+    {
+      "date": "2026-06-21",
+      "acpi_level": 100.1049,
+      "chg_1d_pct": 0.3387,
+      "chg_7d_pct": 0.5341,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.3381
+    },
+    {
+      "date": "2026-06-22",
+      "acpi_level": 100.1,
+      "chg_1d_pct": -0.0049,
+      "chg_7d_pct": 0.3338,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.0049
+    },
+    {
+      "date": "2026-06-23",
+      "acpi_level": 99.8605,
+      "chg_1d_pct": -0.2393,
+      "chg_7d_pct": 0.0937,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.2396
+    },
+    {
+      "date": "2026-06-24",
+      "acpi_level": 99.6332,
+      "chg_1d_pct": -0.2276,
+      "chg_7d_pct": -0.1341,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.2278
+    },
+    {
+      "date": "2026-06-25",
+      "acpi_level": 99.4508,
+      "chg_1d_pct": -0.183,
+      "chg_7d_pct": -0.3169,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": -0.1462,
+      "contrib_market_pct": -0.037
+    },
+    {
+      "date": "2026-06-26",
+      "acpi_level": 99.3498,
+      "chg_1d_pct": -0.1015,
+      "chg_7d_pct": -0.4181,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.1016
+    },
+    {
+      "date": "2026-06-27",
+      "acpi_level": 99.0692,
+      "chg_1d_pct": -0.2824,
+      "chg_7d_pct": -0.6994,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.2828
+    },
+    {
+      "date": "2026-06-28",
+      "acpi_level": 99.0692,
+      "chg_1d_pct": 0.0,
+      "chg_7d_pct": -1.0346,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
+    },
+    {
+      "date": "2026-06-29",
+      "acpi_level": 99.1169,
+      "chg_1d_pct": 0.0481,
+      "chg_7d_pct": -0.9821,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0481
+    },
+    {
+      "date": "2026-06-30",
+      "acpi_level": 99.3073,
+      "chg_1d_pct": 0.1921,
+      "chg_7d_pct": -0.5539,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.1919
+    },
+    {
+      "date": "2026-07-01",
+      "acpi_level": 99.301,
+      "chg_1d_pct": -0.0063,
+      "chg_7d_pct": -0.3334,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.0063
+    },
+    {
+      "date": "2026-07-02",
+      "acpi_level": 99.0885,
+      "chg_1d_pct": -0.214,
+      "chg_7d_pct": -0.3643,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.2142
+    },
+    {
+      "date": "2026-07-03",
+      "acpi_level": 98.9994,
+      "chg_1d_pct": -0.09,
+      "chg_7d_pct": -0.3528,
+      "contrib_gpu_pct": 0.0,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": -0.09
     }
   ]
 }
