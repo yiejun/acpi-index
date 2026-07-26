@@ -113,26 +113,11 @@
       },
       {
         "date": "2026-06-10",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-06-10",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
-        "date": "2026-06-11",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
-        "date": "2026-06-11",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-06-11",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
       },
@@ -142,14 +127,19 @@
         "provider": "lambda"
       },
       {
-        "date": "2026-06-12",
+        "date": "2026-06-11",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-06-11",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
       {
-        "date": "2026-06-12",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "date": "2026-06-11",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-06-12",
@@ -162,12 +152,12 @@
         "provider": "coreweave"
       },
       {
-        "date": "2026-06-13",
+        "date": "2026-06-12",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
       {
-        "date": "2026-06-13",
+        "date": "2026-06-12",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
@@ -182,6 +172,21 @@
         "provider": "azure"
       },
       {
+        "date": "2026-06-13",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-06-13",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-06-14",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
         "date": "2026-06-14",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
@@ -190,11 +195,6 @@
         "date": "2026-06-14",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
-      },
-      {
-        "date": "2026-06-14",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
       },
       {
         "date": "2026-06-14",
@@ -208,6 +208,11 @@
       },
       {
         "date": "2026-06-15",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-06-15",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
@@ -217,7 +222,7 @@
         "provider": "aws"
       },
       {
-        "date": "2026-06-15",
+        "date": "2026-06-16",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
       },
@@ -228,23 +233,18 @@
       },
       {
         "date": "2026-06-16",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
-        "date": "2026-06-16",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-06-16",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
       {
-        "date": "2026-06-17",
+        "date": "2026-06-16",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
+      },
+      {
+        "date": "2026-06-17",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-06-17",
@@ -253,13 +253,18 @@
       },
       {
         "date": "2026-06-17",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-06-17",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-06-18",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-06-18",
@@ -277,9 +282,14 @@
         "provider": "coreweave"
       },
       {
-        "date": "2026-06-18",
+        "date": "2026-06-19",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
+      },
+      {
+        "date": "2026-06-19",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-06-19",
@@ -292,19 +302,9 @@
         "provider": "azure"
       },
       {
-        "date": "2026-06-19",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-06-19",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
         "date": "2026-06-20",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-06-20",
@@ -318,8 +318,18 @@
       },
       {
         "date": "2026-06-20",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-06-21",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
+      },
+      {
+        "date": "2026-06-21",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-06-21",
@@ -332,24 +342,9 @@
         "provider": "lambda"
       },
       {
-        "date": "2026-06-21",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-06-21",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
         "date": "2026-06-22",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
-      },
-      {
-        "date": "2026-06-22",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
       },
       {
         "date": "2026-06-22",
@@ -362,9 +357,14 @@
         "provider": "coreweave"
       },
       {
+        "date": "2026-06-22",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
         "date": "2026-06-23",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-06-23",
@@ -373,11 +373,16 @@
       },
       {
         "date": "2026-06-23",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-06-23",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
       },
       {
-        "date": "2026-06-23",
+        "date": "2026-06-24",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
@@ -388,28 +393,18 @@
       },
       {
         "date": "2026-06-24",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-06-24",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
       {
-        "date": "2026-06-24",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-06-24",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
         "date": "2026-06-25",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-06-25",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-06-25",
@@ -418,16 +413,11 @@
       },
       {
         "date": "2026-06-25",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-06-26",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
       },
       {
-        "date": "2026-06-26",
+        "date": "2026-06-25",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
@@ -442,9 +432,24 @@
         "provider": "aws"
       },
       {
+        "date": "2026-06-26",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-06-26",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
         "date": "2026-06-27",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
+      },
+      {
+        "date": "2026-06-27",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-06-27",
@@ -455,11 +460,6 @@
         "date": "2026-06-27",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
-      },
-      {
-        "date": "2026-06-27",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
       },
       {
         "date": "2026-06-28",
@@ -483,8 +483,8 @@
       },
       {
         "date": "2026-06-29",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-06-29",
@@ -498,6 +498,11 @@
       },
       {
         "date": "2026-06-29",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-06-30",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
@@ -508,26 +513,11 @@
       },
       {
         "date": "2026-06-30",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
-        "date": "2026-06-30",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-06-30",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
       },
       {
-        "date": "2026-07-01",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
-        "date": "2026-07-01",
+        "date": "2026-06-30",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
@@ -538,18 +528,18 @@
       },
       {
         "date": "2026-07-01",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-01",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
       {
-        "date": "2026-07-02",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-07-02",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
+        "date": "2026-07-01",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-07-02",
@@ -560,6 +550,16 @@
         "date": "2026-07-02",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-02",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-07-02",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-03",
@@ -588,6 +588,11 @@
       },
       {
         "date": "2026-07-04",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-07-04",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
       },
@@ -597,9 +602,9 @@
         "provider": "azure"
       },
       {
-        "date": "2026-07-04",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "date": "2026-07-05",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-07-05",
@@ -613,26 +618,6 @@
       },
       {
         "date": "2026-07-05",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-07-05",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
-        "date": "2026-07-06",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-07-06",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-07-06",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
@@ -642,6 +627,21 @@
         "provider": "coreweave"
       },
       {
+        "date": "2026-07-06",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-07-06",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-07-06",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
         "date": "2026-07-07",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
@@ -653,18 +653,13 @@
       },
       {
         "date": "2026-07-07",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
-        "date": "2026-07-07",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
       },
       {
-        "date": "2026-07-08",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
+        "date": "2026-07-07",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-07-08",
@@ -682,14 +677,19 @@
         "provider": "aws"
       },
       {
-        "date": "2026-07-09",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
+        "date": "2026-07-08",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-09",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
+      },
+      {
+        "date": "2026-07-09",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-07-09",
@@ -708,11 +708,6 @@
       },
       {
         "date": "2026-07-10",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
-        "date": "2026-07-10",
         "price_per_gpu_hour_usd": 6.88,
         "provider": "aws"
       },
@@ -722,6 +717,16 @@
         "provider": "lambda"
       },
       {
+        "date": "2026-07-10",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-11",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
         "date": "2026-07-11",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
@@ -733,18 +738,18 @@
       },
       {
         "date": "2026-07-11",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
-        "date": "2026-07-11",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
       },
       {
         "date": "2026-07-12",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-12",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-12",
@@ -753,18 +758,18 @@
       },
       {
         "date": "2026-07-12",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-07-12",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-07-13",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
+      },
+      {
+        "date": "2026-07-13",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-07-13",
@@ -775,21 +780,6 @@
         "date": "2026-07-13",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
-      },
-      {
-        "date": "2026-07-13",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
-        "date": "2026-07-14",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-07-14",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
       },
       {
         "date": "2026-07-14",
@@ -800,6 +790,16 @@
         "date": "2026-07-14",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
+      },
+      {
+        "date": "2026-07-14",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-07-14",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-07-15",
@@ -813,18 +813,13 @@
       },
       {
         "date": "2026-07-15",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-15",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-07-16",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-07-16",
@@ -833,11 +828,31 @@
       },
       {
         "date": "2026-07-16",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-07-16",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
       },
       {
         "date": "2026-07-16",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-07-17",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-07-17",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-17",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
       },
@@ -847,24 +862,9 @@
         "provider": "aws"
       },
       {
-        "date": "2026-07-17",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
-        "date": "2026-07-17",
+        "date": "2026-07-18",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
-      },
-      {
-        "date": "2026-07-17",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
-      },
-      {
-        "date": "2026-07-18",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
       },
       {
         "date": "2026-07-18",
@@ -878,8 +878,8 @@
       },
       {
         "date": "2026-07-18",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-19",
@@ -888,8 +888,8 @@
       },
       {
         "date": "2026-07-19",
-        "price_per_gpu_hour_usd": 6.155,
-        "provider": "coreweave"
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-07-19",
@@ -898,13 +898,8 @@
       },
       {
         "date": "2026-07-19",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-07-20",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
       },
       {
         "date": "2026-07-20",
@@ -918,8 +913,23 @@
       },
       {
         "date": "2026-07-20",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-07-20",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-21",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-07-21",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-07-21",
@@ -932,14 +942,9 @@
         "provider": "coreweave"
       },
       {
-        "date": "2026-07-21",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
-      },
-      {
-        "date": "2026-07-21",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
+        "date": "2026-07-22",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-22",
@@ -957,19 +962,14 @@
         "provider": "aws"
       },
       {
-        "date": "2026-07-22",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
-      },
-      {
         "date": "2026-07-23",
         "price_per_gpu_hour_usd": 6.155,
         "provider": "coreweave"
       },
       {
         "date": "2026-07-23",
-        "price_per_gpu_hour_usd": 13.0274,
-        "provider": "azure"
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
       },
       {
         "date": "2026-07-23",
@@ -978,8 +978,8 @@
       },
       {
         "date": "2026-07-23",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
       },
       {
         "date": "2026-07-24",
@@ -993,23 +993,13 @@
       },
       {
         "date": "2026-07-24",
-        "price_per_gpu_hour_usd": 3.97,
-        "provider": "lambda"
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
       },
       {
         "date": "2026-07-24",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
-      },
-      {
-        "date": "2026-07-25",
         "price_per_gpu_hour_usd": 3.97,
         "provider": "lambda"
-      },
-      {
-        "date": "2026-07-25",
-        "price_per_gpu_hour_usd": 6.88,
-        "provider": "aws"
       },
       {
         "date": "2026-07-25",
@@ -1018,6 +1008,36 @@
       },
       {
         "date": "2026-07-25",
+        "price_per_gpu_hour_usd": 13.0274,
+        "provider": "azure"
+      },
+      {
+        "date": "2026-07-25",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-07-25",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-07-26",
+        "price_per_gpu_hour_usd": 3.97,
+        "provider": "lambda"
+      },
+      {
+        "date": "2026-07-26",
+        "price_per_gpu_hour_usd": 6.88,
+        "provider": "aws"
+      },
+      {
+        "date": "2026-07-26",
+        "price_per_gpu_hour_usd": 6.155,
+        "provider": "coreweave"
+      },
+      {
+        "date": "2026-07-26",
         "price_per_gpu_hour_usd": 13.0274,
         "provider": "azure"
       }
@@ -1475,18 +1495,18 @@
       },
       {
         "date": "2026-06-30",
-        "provider": "openai",
-        "avg_input": 2.5,
-        "avg_output": 10.0
-      },
-      {
-        "date": "2026-06-30",
         "provider": "google",
         "avg_input": 0.3,
         "avg_output": 2.5
       },
       {
         "date": "2026-06-30",
+        "provider": "openai",
+        "avg_input": 2.5,
+        "avg_output": 10.0
+      },
+      {
+        "date": "2026-06-30",
         "provider": "anthropic",
         "avg_input": 3.0,
         "avg_output": 15.0
@@ -1937,6 +1957,24 @@
       },
       {
         "date": "2026-07-25",
+        "provider": "openai",
+        "avg_input": 2.5,
+        "avg_output": 10.0
+      },
+      {
+        "date": "2026-07-26",
+        "provider": "google",
+        "avg_input": 0.3,
+        "avg_output": 2.5
+      },
+      {
+        "date": "2026-07-26",
+        "provider": "anthropic",
+        "avg_input": 3.0,
+        "avg_output": 15.0
+      },
+      {
+        "date": "2026-07-26",
         "provider": "openai",
         "avg_input": 2.5,
         "avg_output": 10.0
@@ -1970,23 +2008,13 @@
       },
       {
         "date": "2026-07-24",
-        "state": "CA",
-        "price_cents_kwh": 20.2
-      },
-      {
-        "date": "2026-07-24",
-        "state": "IA",
-        "price_cents_kwh": 6.62
+        "state": "TX",
+        "price_cents_kwh": 6.33
       },
       {
         "date": "2026-07-24",
         "state": "OR",
         "price_cents_kwh": 8.55
-      },
-      {
-        "date": "2026-07-24",
-        "state": "TX",
-        "price_cents_kwh": 6.33
       },
       {
         "date": "2026-07-24",
@@ -1994,6 +2022,16 @@
         "price_cents_kwh": 10.53
       },
       {
+        "date": "2026-07-24",
+        "state": "CA",
+        "price_cents_kwh": 20.2
+      },
+      {
+        "date": "2026-07-24",
+        "state": "IA",
+        "price_cents_kwh": 6.62
+      },
+      {
         "date": "2026-07-25",
         "state": "CA",
         "price_cents_kwh": 20.2
@@ -2015,6 +2053,31 @@
       },
       {
         "date": "2026-07-25",
+        "state": "VA",
+        "price_cents_kwh": 10.53
+      },
+      {
+        "date": "2026-07-26",
+        "state": "TX",
+        "price_cents_kwh": 6.33
+      },
+      {
+        "date": "2026-07-26",
+        "state": "CA",
+        "price_cents_kwh": 20.2
+      },
+      {
+        "date": "2026-07-26",
+        "state": "IA",
+        "price_cents_kwh": 6.62
+      },
+      {
+        "date": "2026-07-26",
+        "state": "OR",
+        "price_cents_kwh": 8.55
+      },
+      {
+        "date": "2026-07-26",
         "state": "VA",
         "price_cents_kwh": 10.53
       }
@@ -6040,6 +6103,16 @@
       "layer2_api_composite_per_m_usd": 4.3444,
       "layer3_power_avg_cents_kwh": 10.446,
       "layer4_market_avg_close_usd": 144.85
+    },
+    {
+      "timestamp": "2026-07-26T02:10:55.199381+00:00",
+      "date": "2026-07-26",
+      "layer1_gpu_avg_per_gpu_hr_usd": 3.97,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.446,
+      "layer4_market_avg_close_usd": null
     }
   ],
   "zscores": [
@@ -12876,12 +12949,29 @@
       "acpi_score": 0.9337076868,
       "n_obs": 402,
       "window_mode": "rolling_30"
+    },
+    {
+      "timestamp": "2026-07-26T02:10:55.199381+00:00",
+      "date": "2026-07-26",
+      "layer1_gpu_avg_per_gpu_hr_usd": 3.97,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.446,
+      "layer4_market_avg_close_usd": null,
+      "gpu_z": -0.4396968653,
+      "api_z": -0.9831920803,
+      "power_z": 0.5424047368,
+      "market_z": null,
+      "acpi_score": null,
+      "n_obs": 403,
+      "window_mode": "rolling_30"
     }
   ],
   "meta": {
-    "latest_date": "2026-07-25",
-    "acpi_level": 101.4678,
-    "acpi_level_chg_1d": 40.1942
+    "latest_date": "2026-07-26",
+    "acpi_level": 73.7834,
+    "acpi_level_chg_1d": -27.284
   },
   "correlations": [
     {
@@ -17304,6 +17394,17 @@
       "corr_api_power": null,
       "corr_api_market": null,
       "corr_power_market": -0.3188,
+      "divergence_alert": true
+    },
+    {
+      "date": "2026-07-26",
+      "n_obs": 403,
+      "corr_gpu_api": null,
+      "corr_gpu_power": -0.1796,
+      "corr_gpu_market": -0.0399,
+      "corr_api_power": null,
+      "corr_api_market": null,
+      "corr_power_market": -0.3126,
       "divergence_alert": true
     }
   ],
@@ -26553,6 +26654,29 @@
       "loading_api": 0.0179467173,
       "loading_power": 0.1702799741,
       "loading_market": 0.9836357575
+    },
+    {
+      "timestamp": "2026-07-26T02:10:55.199381+00:00",
+      "date": "2026-07-26",
+      "layer1_gpu_avg_per_gpu_hr_usd": 3.97,
+      "layer2_api_input_avg_per_m_usd": 1.9333,
+      "layer2_api_output_avg_per_m_usd": 9.1667,
+      "layer2_api_composite_per_m_usd": 4.3444,
+      "layer3_power_avg_cents_kwh": 10.446,
+      "layer4_market_avg_close_usd": null,
+      "gpu_z": -0.4396968653,
+      "api_z": -0.9831920803,
+      "power_z": 0.5424047368,
+      "market_z": null,
+      "acpi_score": null,
+      "n_obs": 403,
+      "window_mode": "rolling_30",
+      "pc1": null,
+      "pc1_variance_explained": 0.5483398121,
+      "loading_gpu": 0.0560655179,
+      "loading_api": 0.0179467173,
+      "loading_power": 0.1702799741,
+      "loading_market": 0.9836357575
     }
   ],
   "level": [
@@ -27045,6 +27169,16 @@
       "contrib_api_pct": 0.0,
       "contrib_power_pct": 0.0,
       "contrib_market_pct": 1.925
+    },
+    {
+      "date": "2026-07-26",
+      "acpi_level": 73.7834,
+      "chg_1d_pct": -27.284,
+      "chg_7d_pct": 2.6596,
+      "contrib_gpu_pct": -31.8608,
+      "contrib_api_pct": 0.0,
+      "contrib_power_pct": 0.0,
+      "contrib_market_pct": 0.0
     }
   ]
 }
