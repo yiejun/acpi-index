@@ -30,6 +30,7 @@ def main():
             print(f"  {ticker}: ${close:.2f} ({pct_change:+.2f}%)")
             rows.append({
                 "timestamp": timestamp,
+                "quote_date": hist.index[-1].date().isoformat(),
                 "ticker": ticker,
                 "close_usd": close,
                 "prev_close_usd": prev_close,

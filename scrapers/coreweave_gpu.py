@@ -57,8 +57,14 @@ def extract_h100_prices(html):
         else:
             variant = "H100-Unknown"
 
-        # If price > $20, likely per-node (8 GPUs); normalize to per-GPU
-        per_gpu_price = price / 8 if price > 20 else price
+        # Normalize using the explicit configuration, never a dollar threshold.
+        node = re.search(r"H100\s+(\d+)\s+80", context)
+        if node is None:
+            continue  # ambiguous per-node versus per-GPU quote
+        gpu_count = int(node.group(1))
+        if gpu_count <= 0:
+            continue
+        per_gpu_price = price / gpu_count
 
         results.append({
             "context": context,
